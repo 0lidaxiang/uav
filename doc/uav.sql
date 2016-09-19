@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50713
 File Encoding         : 65001
 
-Date: 2016-09-04 23:41:49
+Date: 2016-09-19 21:57:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -47,14 +47,8 @@ CREATE TABLE `dianji` (
   `thrust` varchar(10) DEFAULT NULL,
   `rpm` varchar(10) DEFAULT NULL,
   `efficiency` varchar(10) DEFAULT NULL,
-  `torque` varchar(10) DEFAULT NULL,
+  `kv` varchar(10) DEFAULT NULL,
   `oper_temperature` varchar(4) DEFAULT NULL,
   `create_time` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dianji
--- ----------------------------
-INSERT INTO `dianji` VALUES ('1', '1', '10', '19', '18', '17', '16', '15', '1', '2', '3', '4', '2016-09-04 14:21:27');
-INSERT INTO `dianji` VALUES ('13', '13', '10', '19', '18', '17', '16', '15', '1', '2', '3', '4', '2016-09-04 14:21:52');

@@ -14,93 +14,95 @@
 
   <!-- 网页主体内容 -->
   <div class="col-lg-12">
+    <div style="text-align: center; ">
+      <h1>管理员添加电机型号</h1>
+    </div>
+
     <!-- 注册信息填写 -->
-    <div class="col-lg-4 col-lg-offset-4 ">
-      <div style="text-align: center; ">
-        <h1>管理员添加电机型号</h1>
-      </div>
+    <div class="col-lg-5 col-lg-offset-3 ">
+
 
       <form class="form-horizontal " role="form">
         <div class="form-group ">
-          <label for="item_no " class="col-sm-3 control-label ">item_no:</label>
-          <div class="col-sm-8 ">
+          <label for="item_no " class="col-sm-6 control-label ">型号(item_no):</label>
+          <div class="col-sm-6 ">
             <input type="text" class="form-control " id="item_no" name="item_no">
           </div>
         </div>
         <div class="form-group ">
-          <label for="volts " class="col-sm-3 control-label ">volts:</label>
-          <div class="col-sm-8 ">
-            <input type="text" class="form-control " id="volts" name="volts" >
+          <label for="volts " class="col-sm-6 control-label ">电压(volts):</label>
+          <div class="col-sm-6 ">
+            <input type="text" class="form-control " id="volts" name="volts"  placeholder="单位为V">
           </div>
         </div>
 
         <div class="form-group ">
-          <label for="prop" class="col-sm-3 control-label ">prop:</label>
-          <div class="col-sm-8 ">
+          <label for="prop" class="col-sm-6 control-label ">试验浆(prop):</label>
+          <div class="col-sm-6 ">
             <input type="text" class="form-control " id="prop" name="prop" >
           </div>
         </div>
 
         <div class="form-group">
-          <label for="throttle" class="col-sm-3 control-label ">throttle:</label>
-          <div class="col-sm-8 ">
+          <label for="throttle" class="col-sm-6 control-label ">油门(throttle):</label>
+          <div class="col-sm-6 ">
             <input type="text" class="form-control " id="throttle" name="text">
           </div>
         </div>
 
         <div class="form-group">
-          <label for="amps" class="col-sm-3 control-label ">amps:</label>
-          <div class="col-sm-8 ">
-            <input type="text" class="form-control " id="amps" name="text">
+          <label for="amps" class="col-sm-6 control-label ">电流(amps):</label>
+          <div class="col-sm-6 ">
+              <input type="text" class="form-control" id="amps" name="text" placeholder="单位为A">
           </div>
         </div>
 
         <div class="form-group ">
-          <label for="watts " class="col-sm-3 control-label ">watts:</label>
-          <div class="col-sm-8 ">
-            <input type="text" class="form-control " id="watts" name="watts" >
+          <label for="watts " class="col-sm-6 control-label ">拉力(watts):</label>
+          <div class="col-sm-6 ">
+            <input type="text" class="form-control " id="watts" name="watts" placeholder="单位为G">
           </div>
         </div>
 
         <div class="form-group ">
-          <label for="thrust " class="col-sm-3 control-label ">thrust:</label>
-          <div class="col-sm-8 ">
+          <label for="thrust " class="col-sm-6 control-label ">转速(thrust):</label>
+          <div class="col-sm-6 ">
             <input type="text" class="form-control " id="thrust" name="thrust" >
           </div>
         </div>
 
         <div class="form-group ">
-          <label for="rpm " class="col-sm-3 control-label ">rpm:</label>
-          <div class="col-sm-8 ">
-            <input type="text" class="form-control " id="rpm" name="rpm" >
+          <label for="rpm " class="col-sm-6 control-label ">功率(rpm):</label>
+          <div class="col-sm-6 ">
+            <input type="text" class="form-control " id="rpm" name="rpm" placeholder="单位为W">
           </div>
         </div>
 
         <div class="form-group ">
-          <label for="efficiency " class="col-sm-3 control-label ">efficiency:</label>
-          <div class="col-sm-8 ">
-            <input type="text" class="form-control " id="efficiency" name="efficiency" >
+          <label for="efficiency " class="col-sm-6 control-label ">效率(efficiency):</label>
+          <div class="col-sm-6 ">
+            <input type="text" class="form-control " id="efficiency" name="efficiency" placeholder="单位为G/W">
           </div>
         </div>
 
         <div class="form-group ">
-          <label for="torque " class="col-sm-3 control-label ">torque:</label>
-          <div class="col-sm-8 ">
-            <input type="text" class="form-control " id="torque" name="torque" >
+          <label for="kv " class="col-sm-6 control-label ">KV值:</label>
+          <div class="col-sm-6 ">
+            <input type="text" class="form-control " id="kv" name="kv" >
           </div>
         </div>
 
         <div class="form-group ">
-          <label for="oper_temperature " class="col-sm-3 control-label ">oper_temperature:</label>
-          <div class="col-sm-8 ">
-            <input type="text" class="form-control " id="oper_temperature" name="oper_temperature" >
+          <label for="oper_temperature " class="col-sm-6 control-label ">工作温度(oper_temperature):</label>
+          <div class="col-sm-6 ">
+            <input type="text" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃">
           </div>
         </div>
 
         <div class="form-group">
-          <div class="col-sm-offset-4 col-lg-4 ">
-            <a href="javascript:baoming()" class="btn btn-default col-lg-12 ">确认提交</a>
-            <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-12 ">退出登录</a>
+        <div class="col-sm-offset-5 col-lg-5 ">
+            <a href="javascript:baoming()" class="btn btn-default col-lg-6 ">确认提交</a>
+            <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-6 ">退出登录</a>
           </div>
         </div>
       </form>
@@ -113,14 +115,6 @@
 <script src="/Public/bootstrap/js/bootstrap.min.js "></script>
 
 <script type="text/javascript ">
-  function confirmBaoMing() {
-    var res = confirm("您确定参加该比赛报名吗？");
-
-    if (!res) {
-      return false;
-    }
-  }
-
   function baoming(){
     var item_no = $.trim($("#item_no").val());
     var volts = $.trim($("#volts").val());
@@ -131,7 +125,7 @@
     var thrust = $.trim($("#thrust").val());
     var rpm = $.trim($("#rpm").val());
     var efficiency = $.trim($("#efficiency").val());
-    var torque = $.trim($("#torque").val());
+    var kv = $.trim($("#kv").val());
     var oper_temperature = $.trim($("#oper_temperature").val());
 
     var parms = {
@@ -144,11 +138,10 @@
       'thrust' : thrust,
       'rpm' : rpm,
       'efficiency' : efficiency,
-      'torque' : torque,
+      'kv' : kv,
       'oper_temperature' : oper_temperature
     }
 
-    // confirmBaoMing();
     $.ajax({
       url: '/index.php/Admin/AdminDianJi/baoming',
       type: 'POST',
