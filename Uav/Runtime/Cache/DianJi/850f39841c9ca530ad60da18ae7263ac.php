@@ -14,6 +14,7 @@
   <script src="/Public/js/jquery.md5.js"></script>
   <script src="/Public/bootstrap/js/bootstrap.min.js "></script>
   <link href="/Public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/uav/Common/images/uav.ico" rel="shortcut icon"  type="x-icon">
   <!-- <link href="/Public/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"> -->
   <link href="/Public/dist/css/sb-admin-2.css" rel="stylesheet">
   <link href="/Public/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -34,55 +35,53 @@
 
   <div class="col-xs-12 page-header">
     <div style="text-align: center;font-size: 1.5em;">
-      <b>电机配置计算</b>
+      <b>多轴飞行器参数设定</b>
     </div>
   </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row col-sm-12">
 
       <form class="form-horizontal " role="form">
-       <div class="form-group">
-        <label for="lastname" class="col-sm-2 control-label">姓名</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="lastname" placeholder="请输入姓名">
-        </div>
-      </div>
 
-      <div class="form-group">
-        <label for="name" class="col-sm-2 control-label">选择用途</label>
-        <div class="col-sm-10">
+      <div class="form-group col-sm-12">
+        <label for="name" class="col-sm-4 control-label">选择用途</label>
+        <div class="col-sm-8">
           <select class="form-control">
-            <option>航拍</option>
-            <option>纯飞行</option>
-            <option>大型摄影</option>
+            <option>竞速穿越（机架尺寸180-280）</option>
+            <option>普通航拍（机架尺寸350-450）</option>
+            <option>专业级摄影设备（机架尺寸550-1000）</option>
+            <option>专业植保机（机架尺寸1000-2000）</option>
           </select>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="name" class="col-sm-2 control-label">选择重量</label>
-        <div class="col-sm-10">
+      <div class="form-group col-sm-12">
+        <label for="name" class="col-sm-4 control-label">指定机架轴数</label>
+        <div class="col-sm-8">
           <select class="form-control">
-            <option>1KG</option>
-            <option>2KG</option>
+            <option>4轴</option>
+            <option>6轴</option>
+            <option>8轴</option>
           </select>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="name" class="col-sm-2 control-label">选择体积</label>
-        <div class="col-sm-10">
+      <div class="form-group col-sm-12">
+        <label for="name" class="col-sm-4 control-label">选择重量</label>
+        <div class="col-sm-8">
           <select class="form-control">
-            <option>100立方厘米</option>
-            <option>200</option>
+            <option>200-600 克</option>
+            <option>600-1200 克</option>
+            <option>1200-2500 克</option>
+            <option>2500-4000 克</option>
           </select>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group col-sm-12">
         <div class="col-sm-offset-4 col-lg-4 ">
-          <a href="javascript:tijiao()" class="btn btn-default col-lg-12 ">提交</a>
+          <a href="javascript:tijiao()" class="btn btn-default col-sm-10 col-lg-12">提交</a>
         </div>
       </div>
     </form>
@@ -102,7 +101,7 @@
   }
 
   function tijiao() {
-    alert("进化中！憋个大招给你看！");
+    alert("提交数据");
   }
 </script>
 </html>

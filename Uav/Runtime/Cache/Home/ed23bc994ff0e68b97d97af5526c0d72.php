@@ -14,12 +14,9 @@
   <script src="/Public/js/jquery.md5.js"></script>
   <script src="/Public/bootstrap/js/bootstrap.min.js "></script>
   <link href="/Public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link href="/Public/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"> -->
   <link href="/Public/dist/css/sb-admin-2.css" rel="stylesheet">
   <link href="/Public/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <script src="/Public/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-  <script src="/Public/dist/js/sb-admin-2.js"></script>
-
+  <link href="/uav/Common/images/uav.ico" rel="shortcut icon"  type="x-icon">
   <style type="text/css">
     body
     {
@@ -27,6 +24,9 @@
       background-color: #fff;
     }
   </style>
+
+  <script src="/Public/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/Public/dist/js/sb-admin-2.js"></script>
 </head>
 
 <body>
@@ -39,8 +39,8 @@
     <img src="/Public/images/uavLogo.jpg" class="img-responsive" alt="Cinque Terre" style="height: auto;margin: 0px auto;">
   </div>
 
-  <div class="col-xs-12">
-    <div class="col-sm-4 col-md-offset-4">
+  <div class="col-sm-12">
+    <div class="col-sm-4 col-sm-offset-4">
        <a href="javascript:toJSDianji()" class="btn btn-primary btn-lg col-xs-12" role="button">进入计算</a>
     </div>
   </div>
