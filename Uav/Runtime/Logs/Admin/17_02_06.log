@@ -1,0 +1,85 @@
+[ 2017-02-06T16:58:06+08:00 ] 127.0.0.1 /index.php/Admin/AdminLogin/adminLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.067911s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.082306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.082476s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.023104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.023501s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.675683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.675882s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.037977s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.038116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.050258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.050525s ]
+
+[ 2017-02-06T17:01:39+08:00 ] 127.0.0.1 /index.php/Admin/AdminLogin/adminLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000917s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001389s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014320s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001454s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001578s ]
+
+[ 2017-02-06T17:01:53+08:00 ] 127.0.0.1 /index.php/Admin/AdminLogin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SELECT * FROM `admin` WHERE ( id='2016001' ) LIMIT 1   [ RunTime:0.5649s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\AMP\apache24\htdocs\uav\Uav\Admin\Controller\AdminLoginController.class.php 第 37 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001211s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001328s ]
+
+[ 2017-02-06T17:01:53+08:00 ] 127.0.0.1 /index.php/Admin/AdminDianJi/adminAddDianJi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001189s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001318s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.222087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.222264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001169s ]
+
+[ 2017-02-06T17:01:53+08:00 ] 127.0.0.1 /index.php/Admin/AdminLogin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001829s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002308s ]
+SQL: SELECT * FROM `admin` WHERE ( id='2016001' ) LIMIT 1   [ RunTime:0.0045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002018s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002196s ]
+
