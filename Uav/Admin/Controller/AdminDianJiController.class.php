@@ -12,25 +12,21 @@ class AdminDianJiController extends Controller {
 		$Status->checkAdminUserIsOnline("adminAddDianJi");
 	}
 
-	public function baoming(){
-		$data['id'] = $_POST['item_no'];
+	public function addDianJiStyle(){
 		$data['item_no'] = $_POST['item_no'];
-		$data['volts'] = $_POST['volts'];
-		$data['prop'] = $_POST['prop'];
-		$data['throttle'] = $_POST['throttle'];
+		$data['kv'] = $_POST['kv'];
 		$data['amps'] = $_POST['amps'];
+		$data['volts'] = $_POST['volts'];
+		$data['force'] = $_POST['force'];
 
-		$data['watts'] = $_POST['watts'];
-		$data['thrust'] = $_POST['thrust'];
-		$data['rpm'] = $_POST['rpm'];
-		$data['efficiency'] = $_POST['efficiency'];
-		$data['torque'] = $_POST['torque'];
+		$data['bestAmps'] = $_POST['bestAmps'];
+		$data['bestForce'] = $_POST['bestForce'];
 		$data['oper_temperature'] = $_POST['oper_temperature'];
 		$data['create_time'] = date('Y-m-d H:i:s',time());
 
 		try {
 			$Dianji = new \Common\Model\DianjiModel();
-			$result = $Dianji->where("id="."'".$data['id']."'")->limit(1)->select();
+			$result = $Dianji->where("item_no="."'".$data['item_no']."'")->limit(1)->select();
 
 			if (count($result) == 0) {
 				$addResult = $Dianji->add($data);

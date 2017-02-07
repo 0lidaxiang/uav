@@ -26,82 +26,92 @@
         <div class="form-group ">
           <label for="item_no " class="col-sm-6 control-label ">型号(item_no):</label>
           <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="item_no" name="item_no">
-          </div>
-        </div>
-        <div class="form-group ">
-          <label for="volts " class="col-sm-6 control-label ">电压(volts):</label>
-          <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="volts" name="volts"  placeholder="单位为V">
-          </div>
-        </div>
-
-        <div class="form-group ">
-          <label for="prop" class="col-sm-6 control-label ">试验浆(prop):</label>
-          <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="prop" name="prop" >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="throttle" class="col-sm-6 control-label ">油门(throttle):</label>
-          <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="throttle" name="text">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="amps" class="col-sm-6 control-label ">电流(amps):</label>
-          <div class="col-sm-6 ">
-              <input type="text" class="form-control" id="amps" name="text" placeholder="单位为A">
-          </div>
-        </div>
-
-        <div class="form-group ">
-          <label for="watts " class="col-sm-6 control-label ">拉力(watts):</label>
-          <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="watts" name="watts" placeholder="单位为G">
-          </div>
-        </div>
-
-        <div class="form-group ">
-          <label for="thrust " class="col-sm-6 control-label ">转速(thrust):</label>
-          <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="thrust" name="thrust" >
-          </div>
-        </div>
-
-        <div class="form-group ">
-          <label for="rpm " class="col-sm-6 control-label ">功率(rpm):</label>
-          <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="rpm" name="rpm" placeholder="单位为W">
-          </div>
-        </div>
-
-        <div class="form-group ">
-          <label for="efficiency " class="col-sm-6 control-label ">效率(efficiency):</label>
-          <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="efficiency" name="efficiency" placeholder="单位为G/W">
+            <input type="number" class="form-control " id="item_no" name="item_no">
           </div>
         </div>
 
         <div class="form-group ">
           <label for="kv " class="col-sm-6 control-label ">KV值:</label>
           <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="kv" name="kv" >
+            <input type="number" class="form-control " id="kv" name="kv" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="amps" class="col-sm-6 control-label ">电流(amps):</label>
+          <div class="col-sm-6 ">
+              <input type="number" class="form-control" id="amps" name="text" placeholder="单位为A,最高5位数" oninput="computePower(), computeEfficiency()">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="volts " class="col-sm-6 control-label ">电压(volts):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="volts" name="volts"  placeholder="单位为V,最高5位数" oninput="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="power " class="col-sm-6 control-label ">功率(power):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="power" name="power" placeholder="0 W" readonly="readonly">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="force " class="col-sm-6 control-label ">拉力(force):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="force" name="force" placeholder="单位为G,最高5位数" oninput="computeEfficiency()">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="efficiency " class="col-sm-6 control-label ">效率(efficiency):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="efficiency" name="efficiency" placeholder="0 G/W" readonly="readonly">
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+          <label for="bestAmps" class="col-sm-6 control-label ">最佳电流(bestAmps):</label>
+          <div class="col-sm-6 ">
+              <input type="number" class="form-control" id="bestAmps" name="text" placeholder="单位为A,最高5位数" oninput="computeBestPower(), computeBestEfficiency()">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="bestPower " class="col-sm-6 control-label ">最佳功率(bestPower):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="bestPower" name="bestPower" placeholder="0 W" readonly="readonly" oninput="computeBestEfficiency()">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="bestForce " class="col-sm-6 control-label ">最佳拉力(bestForce):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="bestForce" name="bestForce" placeholder="单位为G,最高5位数" oninput="computeBestEfficiency()">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="bestEfficiency " class="col-sm-6 control-label ">最佳效率(bestEfficiency):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="bestEfficiency" name="bestEfficiency" placeholder="0 G/W" readonly="readonly">
           </div>
         </div>
 
         <div class="form-group ">
           <label for="oper_temperature " class="col-sm-6 control-label ">工作温度(oper_temperature):</label>
           <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃">
+            <input type="number" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃,最高3位数" oninput="checkTemperatureLength()">
           </div>
         </div>
 
         <div class="form-group">
         <div class="col-sm-offset-5 col-lg-5 ">
-            <a href="javascript:baoming()" class="btn btn-default col-lg-6 ">确认提交</a>
+            <a href="javascript: addDianJiStyle()" class="btn btn-default col-lg-6 ">确认提交</a>
             <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-6 ">退出登录</a>
           </div>
         </div>
@@ -115,35 +125,99 @@
 <script src="/Public/bootstrap/js/bootstrap.min.js "></script>
 
 <script type="text/javascript ">
-  function baoming(){
+  function computePower() {
+    //compute power
+    // 负责只计算三位数
+    var amps = $('#amps').val().slice(0, 5);
+    var volts = $('#volts').val().slice(0, 5);
+    //负责只显示三位数
+    if ($('#amps').val().length > 3) {
+      $('#amps').val(amps);
+    }
+    if ($('#volts').val().length > 3 ) {
+      $('#volts').val(volts);
+    }
+
+    $('#power').val(amps * volts);
+  }
+
+  function computeEfficiency() {
+    //compute power
+    // 负责只计算三位数
+    var power = $('#power').val().slice(0, 5);
+    var force = $('#force').val().slice(0, 5);
+    //负责只显示三位数
+
+    if ($('#force').val().length > 3 ) {
+      $('#force').val(force);
+    }
+
+    var eff = force / power;
+    $('#efficiency').val(eff);
+  }
+
+  function computeBestPower() {
+  //compute bestPower
+  // 负责只计算三位数
+  var bestAmps = $('#bestAmps').val().slice(0, 5);
+  var volts = $('#volts').val().slice(0, 5);
+  //负责只显示三位数
+  if ($('#bestAmps').val().length > 3) {
+    $('#bestAmps').val(bestAmps);
+  }
+  if ($('#volts').val().length > 3 ) {
+    $('#volts').val(volts);
+  }
+
+  $('#bestPower').val(bestAmps * volts);
+}
+
+function computeBestEfficiency() {
+    //compute bestEfficiency
+    // 负责只计算三位数
+    var bestPower = $('#bestPower').val().slice(0, 5);
+    var bestForce = $('#bestForce').val().slice(0, 5);
+    //负责只显示三位数
+    if ($('#bestForce').val().length > 3 ) {
+      $('#bestForce').val(bestForce);
+    }
+
+    var eff = bestForce / bestPower;
+    $('#bestEfficiency').val(eff);
+  }
+
+  function checkTemperatureLength() {
+    var oper_temperature = $('#oper_temperature').val().slice(0, 3);
+    //限制该input只有三位
+    if ($('#oper_temperature').val().length > 3 ) {
+      $('#oper_temperature').val(oper_temperature);
+    }
+  }
+
+  function addDianJiStyle(){
     var item_no = $.trim($("#item_no").val());
-    var volts = $.trim($("#volts").val());
-    var prop = $.trim($("#prop").val());
-    var throttle = $.trim($("#throttle").val());
-    var amps = $.trim($("#amps").val());
-    var watts = $.trim($("#watts").val());
-    var thrust = $.trim($("#thrust").val());
-    var rpm = $.trim($("#rpm").val());
-    var efficiency = $.trim($("#efficiency").val());
     var kv = $.trim($("#kv").val());
+    var amps = $.trim($("#amps").val());
+    var volts = $.trim($("#volts").val());
+    var force = $.trim($("#force").val());
+
+    var bestAmps = $.trim($("#bestAmps").val());
+    var bestForce = $.trim($("#bestForce").val());
     var oper_temperature = $.trim($("#oper_temperature").val());
 
     var parms = {
       'item_no' : item_no,
-      'volts' : volts,
-      'prop' : prop,
-      'throttle' : throttle,
-      'amps' : amps,
-      'watts' : watts,
-      'thrust' : thrust,
-      'rpm' : rpm,
-      'efficiency' : efficiency,
       'kv' : kv,
+      'amps' : amps,
+      'volts' : volts,
+      'force' : force,
+      'bestAmps' : bestAmps,
+      'bestForce' : bestForce,
       'oper_temperature' : oper_temperature
     }
 
     $.ajax({
-      url: '/index.php/Admin/AdminDianJi/baoming',
+      url: '/index.php/Admin/AdminDianJi/addDianJiStyle',
       type: 'POST',
       data: parms,
       success:function(responseData){
@@ -164,6 +238,7 @@
       }
     });
   }
+
 </script>
 
 </html>

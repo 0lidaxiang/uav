@@ -44,51 +44,88 @@
 
       <form class="form-horizontal " role="form">
 
-      <div class="form-group col-sm-12">
-        <label for="name" class="col-sm-4 control-label">选择用途</label>
-        <div class="col-sm-8">
-          <select class="form-control">
-            <option>竞速穿越（机架尺寸180-280）</option>
-            <option>普通航拍（机架尺寸350-450）</option>
-            <option>专业级摄影设备（机架尺寸550-1000）</option>
-            <option>专业植保机（机架尺寸1000-2000）</option>
-          </select>
+        <div class="form-group col-sm-12">
+          <label for="use" class="col-sm-4 control-label">选择用途</label>
+          <div class="col-sm-8">
+            <div class="radio">
+              <label>
+                <input type="radio" name="use" id="optionsRadios1" value="option1">竞速穿越 (机架尺寸180-280)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="use" id="optionsRadios2" value="option2">普通航拍 (机架尺寸350-450)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="use" id="optionsRadios2" value="option2">专业级摄影设备 (机架尺寸550-1000)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="use" id="optionsRadios2" value="option2">专业植保机 (机架尺寸1000-2000)
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group col-sm-12">
-        <label for="name" class="col-sm-4 control-label">指定机架轴数</label>
-        <div class="col-sm-8">
-          <select class="form-control">
-            <option>4轴</option>
-            <option>6轴</option>
-            <option>8轴</option>
-          </select>
+        <div class="form-group col-sm-12">
+          <label for="numberOfFrame" class="col-sm-4 control-label">指定机架轴数</label>
+          <div class="col-sm-8">
+            <div class="radio">
+              <label>
+                <input type="radio" name="numberOfFrame" id="optionsRadios2" value="option2">4轴
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="numberOfFrame" id="optionsRadios2" value="option2">6轴
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="numberOfFrame" id="optionsRadios2" value="option2">8轴
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group col-sm-12">
-        <label for="name" class="col-sm-4 control-label">选择重量</label>
-        <div class="col-sm-8">
-          <select class="form-control">
-            <option>200-600 克</option>
-            <option>600-1200 克</option>
-            <option>1200-2500 克</option>
-            <option>2500-4000 克</option>
-          </select>
+        <div class="form-group col-sm-12">
+          <label for="catchWeight" class="col-sm-4 control-label">选择重量</label>
+          <div class="col-sm-8">
+            <div class="radio">
+              <label>
+                <input type="radio" name="catchWeight" id="optionsRadios2" value="option2">200-600 克
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="catchWeight" id="optionsRadios2" value="option2">600-1200 克
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="catchWeight" id="optionsRadios2" value="option2">1200-2500 克
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="catchWeight" id="optionsRadios2" value="option2">2500-4000 克
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group col-sm-12">
-        <div class="col-sm-offset-4 col-lg-4 ">
-          <a href="javascript:tijiao()" class="btn btn-default col-sm-10 col-lg-12">提交</a>
+        <div class="form-group col-sm-12">
+          <div class="col-sm-offset-4 col-lg-4 ">
+            <a href="javascript:tijiao()" class="btn btn-default col-sm-10 col-lg-12">提交</a>
+          </div>
         </div>
-      </div>
-    </form>
 
+      </form>
+    </div>
   </div>
-
-</div>
 </body>
 
 <script type="text/javascript">

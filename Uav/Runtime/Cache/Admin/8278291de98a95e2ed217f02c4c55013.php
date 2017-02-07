@@ -22,7 +22,7 @@
                     <div class="panel-body">
 
                         <div class="form-group">
-                            <input id="loginUserId" name="loginUserId" class="form-control" type="text" value="admin" autofocus>
+                            <input id="loginUserId" name="loginUserId" class="form-control" placeholder="LoginName" type="text" autofocus>
                         </div>
                         <div class="form-group">
                             <input id="password" name="password" class="form-control" placeholder="Password" type="password" value=''>
