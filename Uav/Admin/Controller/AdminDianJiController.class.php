@@ -22,6 +22,7 @@ class AdminDianJiController extends Controller {
 		$data['bestAmps'] = $_POST['bestAmps'];
 		$data['bestForce'] = $_POST['bestForce'];
 		$data['oper_temperature'] = $_POST['oper_temperature'];
+		$data['jiangSize'] = $_POST['jiangSize'];
 		$data['create_time'] = date('Y-m-d H:i:s',time());
 
 		try {

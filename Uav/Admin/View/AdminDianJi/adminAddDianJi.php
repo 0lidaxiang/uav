@@ -40,14 +40,31 @@
         <div class="form-group">
           <label for="amps" class="col-sm-6 control-label ">电流(amps):</label>
           <div class="col-sm-6 ">
-              <input type="number" class="form-control" id="amps" name="text" placeholder="单位为A,最高5位数" oninput="computePower(), computeEfficiency()">
+            <input type="number" class="form-control" id="amps" name="text" placeholder="单位为A,最高5位数" oninput="computePower(), computeEfficiency()">
           </div>
         </div>
 
         <div class="form-group ">
           <label for="volts " class="col-sm-6 control-label ">电压(volts):</label>
+
           <div class="col-sm-6 ">
-            <input type="number" class="form-control " id="volts" name="volts"  placeholder="单位为V,最高5位数" oninput="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">
+            <div class="radio">
+            <label>
+              <input type="radio" name="volts" value="4"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()" checked>4s
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="volts" value="5"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">5s
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="volts" value="6"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">6s
+            </label>
+          </div>
+            <!-- <input type="number" class="form-control " id="volts" name="volts"  placeholder="单位为V,最高5位数" oninput="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()"> -->
+
           </div>
         </div>
 
@@ -77,7 +94,7 @@
         <div class="form-group">
           <label for="bestAmps" class="col-sm-6 control-label ">最佳电流(bestAmps):</label>
           <div class="col-sm-6 ">
-              <input type="number" class="form-control" id="bestAmps" name="text" placeholder="单位为A,最高5位数" oninput="computeBestPower(), computeBestEfficiency()">
+            <input type="number" class="form-control" id="bestAmps" name="text" placeholder="单位为A,最高5位数" oninput="computeBestPower(), computeBestEfficiency()">
           </div>
         </div>
 
@@ -109,16 +126,44 @@
           </div>
         </div>
 
-        <div class="form-group">
-        <div class="col-sm-offset-5 col-lg-5 ">
-            <a href="javascript: addDianJiStyle()" class="btn btn-default col-lg-6 ">确认提交</a>
-            <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-6 ">退出登录</a>
+        <div class="form-group ">
+        <label for="oper_temperature " class="col-sm-6 control-label ">推荐浆(size):</label>
+         <div class="col-sm-6 ">
+          <div class="radio">
+            <label>
+              <input type="radio" name="jiangSize" id="jiangSize1" value="11*5.5" checked>11*5.5
+            </label>
+          </div>
+
+          <div class="radio">
+            <label>
+              <input type="radio" name="jiangSize" id="jiangSize2" value="12*3.8">12*3.8
+            </label>
+          </div>
+
+          <div class="radio">
+            <label>
+              <input type="radio" name="jiangSize" id="jiangSize3" value="14*5.5">14*5.5
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="jiangSize" value="15*5.5">15*5.5
+            </label>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
 
+      <div class="form-group">
+        <div class="col-sm-offset-5 col-lg-5 ">
+          <a href="javascript: addDianJiStyle()" class="btn btn-default col-lg-6 ">确认提交</a>
+          <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-6 ">退出登录</a>
+        </div>
+      </div>
+    </form>
   </div>
+
+</div>
 </body>
 
 <script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
@@ -129,16 +174,14 @@
     //compute power
     // 负责只计算三位数
     var amps = $('#amps').val().slice(0, 5);
-    var volts = $('#volts').val().slice(0, 5);
+    var volts = $('input[name=volts]:checked').val().slice(0, 5);
     //负责只显示三位数
     if ($('#amps').val().length > 3) {
       $('#amps').val(amps);
     }
-    if ($('#volts').val().length > 3 ) {
-      $('#volts').val(volts);
-    }
 
-    $('#power').val(amps * volts);
+    var power = amps * volts * 3.6;
+    $('#power').val(power.toFixed(2));
   }
 
   function computeEfficiency() {
@@ -153,23 +196,21 @@
     }
 
     var eff = force / power;
-    $('#efficiency').val(eff);
+    $('#efficiency').val(eff.toFixed(2));
   }
 
   function computeBestPower() {
   //compute bestPower
   // 负责只计算三位数
   var bestAmps = $('#bestAmps').val().slice(0, 5);
-  var volts = $('#volts').val().slice(0, 5);
+  var volts = $('input[name=volts]:checked').val().slice(0, 5);
   //负责只显示三位数
   if ($('#bestAmps').val().length > 3) {
     $('#bestAmps').val(bestAmps);
   }
-  if ($('#volts').val().length > 3 ) {
-    $('#volts').val(volts);
-  }
 
-  $('#bestPower').val(bestAmps * volts);
+  var bestPower = bestAmps * volts * 3.6;
+  $('#bestPower').val(bestPower.toFixed(2));
 }
 
 function computeBestEfficiency() {
@@ -182,15 +223,15 @@ function computeBestEfficiency() {
       $('#bestForce').val(bestForce);
     }
 
-    var eff = bestForce / bestPower;
-    $('#bestEfficiency').val(eff);
+    var bestEff = bestForce / bestPower;
+    $('#bestEfficiency').val(bestEff.toFixed(2));
   }
 
   function checkTemperatureLength() {
     var oper_temperature = $('#oper_temperature').val().slice(0, 3);
     //限制该input只有三位
     if ($('#oper_temperature').val().length > 3 ) {
-      $('#oper_temperature').val(oper_temperature);
+      $('#oper_temperature').val(oper_temperature.toFixed(2));
     }
   }
 
@@ -198,12 +239,13 @@ function computeBestEfficiency() {
     var item_no = $.trim($("#item_no").val());
     var kv = $.trim($("#kv").val());
     var amps = $.trim($("#amps").val());
-    var volts = $.trim($("#volts").val());
+    var volts = $.trim($('input[name=volts]:checked').val());
     var force = $.trim($("#force").val());
 
     var bestAmps = $.trim($("#bestAmps").val());
     var bestForce = $.trim($("#bestForce").val());
     var oper_temperature = $.trim($("#oper_temperature").val());
+    var jiangSize = $('input[name=jiangSize]:checked').val();
 
     var parms = {
       'item_no' : item_no,
@@ -213,7 +255,8 @@ function computeBestEfficiency() {
       'force' : force,
       'bestAmps' : bestAmps,
       'bestForce' : bestForce,
-      'oper_temperature' : oper_temperature
+      'oper_temperature' : oper_temperature,
+      'jiangSize' : jiangSize
     }
 
     $.ajax({

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : lidaxiang
+Source Server         : localhost_3306
 Source Server Version : 50713
 Source Host           : localhost:3306
 Source Database       : uav
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50713
 File Encoding         : 65001
 
-Date: 2017-02-07 17:14:37
+Date: 2017-02-08 21:53:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -45,6 +45,7 @@ CREATE TABLE `dianji` (
   `bestAmps` varchar(10) DEFAULT NULL,
   `bestForce` varchar(10) DEFAULT NULL,
   `oper_temperature` varchar(4) DEFAULT NULL,
+  `jiangSize` varchar(10) DEFAULT NULL,
   `create_time` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`item_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
