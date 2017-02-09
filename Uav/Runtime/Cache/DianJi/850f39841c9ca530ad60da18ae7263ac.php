@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
@@ -9,29 +9,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>无人机配置计算</title>
 
-	<link href="__PUBLIC__/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
-  <script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
-  <script src="__PUBLIC__/js/jquery.md5.js"></script>
-  <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js "></script>
-  <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/Public/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
+  <script src="/Public/js/jquery-2.2.4.min.js "></script>
+  <script src="/Public/js/jquery.md5.js"></script>
+  <script src="/Public/bootstrap/js/bootstrap.min.js "></script>
+  <link href="/Public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/uav/Common/images/uav.ico" rel="shortcut icon"  type="x-icon">
-  <!-- <link href="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"> -->
-  <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
-  <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <script src="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-  <script src="__PUBLIC__/dist/js/sb-admin-2.js"></script>
+  <!-- <link href="/Public/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"> -->
+  <link href="/Public/dist/css/sb-admin-2.css" rel="stylesheet">
+  <link href="/Public/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="/Public/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/Public/dist/js/sb-admin-2.js"></script>
 
   <style type="text/css">
     body
     {
-      /* background-image: url("__PUBLIC__/images/uavLogo.jpg"); */
+      /* background-image: url("/Public/images/uavLogo.jpg"); */
       background-color: #fff;
     }
   </style>
 </head>
 
 <body>
-  <?php include("__PUBLIC__/view/nav.html"); ?>
+  <?php include("/Public/view/nav.html"); ?>
 
   <div class="col-xs-12 page-header">
     <div style="text-align: center;font-size: 1.5em;">
@@ -136,6 +136,24 @@
     };
 
     window.location.href = "/index.php/DianJi/DianJi/computeDianJiStyle?numberOfDianJi="+numberOfDianJi+"&catchWeight=" + catchWeight
+
+    // $.ajax({
+    //   url: '/index.php/DianJi/DianJi/computeDianJiStyle',
+    //   type: 'POST',
+    //   data: parms,
+    //   success:function(responseData){
+    //     console.log(responseData);
+    //     if(responseData==3){
+    //       alert("操作异常!请联系管理员！ ");
+    //     }
+    //     else if(responseData==2){
+    //       alert("没有您要找的类型!");
+    //     }
+    //     // else{
+    //     //   window.location.href = "/index.php/DianJi/DianJi/result"
+    //     // }
+    //   }
+    // });
   }
 </script>
 </html>
