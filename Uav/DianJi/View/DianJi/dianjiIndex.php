@@ -54,17 +54,17 @@
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="use" id="optionsRadios2" value="option2">普通航拍 (机架尺寸350-450)
+                <input type="radio" name="use" value="option2">普通航拍 (机架尺寸350-450)
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="use" id="optionsRadios2" value="option2">专业级摄影设备 (机架尺寸550-1000)
+                <input type="radio" name="use" value="option2">专业级摄影设备 (机架尺寸550-1000)
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="use" id="optionsRadios2" value="option2">专业植保机 (机架尺寸1000-2000)
+                <input type="radio" name="use" value="option2">专业植保机 (机架尺寸1000-2000)
               </label>
             </div>
           </div>
@@ -75,24 +75,55 @@
           <div class="col-sm-8">
             <div class="radio">
               <label>
-                <input type="radio" name="numberOfDianJi" id="optionsRadios2" value="4" checked>4轴
+                <input type="radio" name="numberOfDianJi" value="4" checked>4轴
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="numberOfDianJi" id="optionsRadios2" value="6">6轴
+                <input type="radio" name="numberOfDianJi" value="6">6轴
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="numberOfDianJi" id="optionsRadios2" value="8">8轴
+                <input type="radio" name="numberOfDianJi" value="8">8轴
               </label>
             </div>
           </div>
         </div>
 
         <div class="form-group col-sm-12">
-          <label for="catchWeight" class="col-sm-4 control-label">选择重量</label>
+          <label for="batteryCapacity" class="col-sm-4 control-label">电池容量</label>
+          <div class="col-sm-8">
+            <div class="radio">
+              <label>
+                <input type="radio" name="batteryCapacity" value="5" checked>5000毫安
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="batteryCapacity" value="6">6000毫安
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="batteryCapacity" value="8">8000毫安
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="batteryCapacity" value="10">10000毫安
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="batteryCapacity" value="22">22000毫安
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-12">
+          <label for="catchWeight" class="col-sm-4 control-label">电机总重量</label>
           <div class="col-sm-4">
             <input type="number" class="form-control " id="catchWeight" name="catchWeight" placeholder="单位为g,最高5位数" oninput="limit5()">
           </div>
@@ -129,13 +160,15 @@
   function tijiao() {
     var catchWeight = $.trim($("#catchWeight").val());
     var numberOfDianJi = $.trim($('input[name=numberOfDianJi]:checked').val());
+    var batteryCapacity = $.trim($('input[name=batteryCapacity]:checked').val());
 
     var parms = {
       'numberOfDianJi' : numberOfDianJi,
+      'batteryCapacity' : batteryCapacity,
       'catchWeight' : catchWeight
     };
 
-    window.location.href = "/index.php/DianJi/DianJi/computeDianJiStyle?numberOfDianJi="+numberOfDianJi+"&catchWeight=" + catchWeight
+    window.location.href = "/index.php/DianJi/DianJi/computeDianJiStyle?numberOfDianJi="+numberOfDianJi + "&catchWeight=" + catchWeight +"&batteryCapacity=" + batteryCapacity;
   }
 </script>
 </html>

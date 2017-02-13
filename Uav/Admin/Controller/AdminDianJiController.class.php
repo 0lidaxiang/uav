@@ -14,6 +14,7 @@ class AdminDianJiController extends Controller {
 
 	public function addDianJiStyle(){
 		$data['item_no'] = $_POST['item_no'];
+		$data['style'] = $_POST['style'];
 		$data['kv'] = $_POST['kv'];
 		$data['amps'] = $_POST['amps'];
 		$data['volts'] = $_POST['volts'];

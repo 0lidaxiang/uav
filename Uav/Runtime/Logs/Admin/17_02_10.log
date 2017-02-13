@@ -1,0 +1,40 @@
+[ 2017-02-10T23:31:31+08:00 ] 127.0.0.1 /index.php/Admin/AdminLogin/adminLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000076s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002789s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000387s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000574s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089923s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090074s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001632s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004730s ]
+
+[ 2017-02-10T23:31:33+08:00 ] 127.0.0.1 /index.php/Admin/AdminDianJi/adminAddDianJi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000363s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000551s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.167701s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.167984s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001795s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001945s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012386s ]
+

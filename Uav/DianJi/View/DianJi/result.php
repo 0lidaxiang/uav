@@ -34,15 +34,75 @@
 
   <div class="col-xs-12 page-header">
     <div style="text-align: center;font-size: 1.5em;">
-      <b>多轴飞行器配置结果</b>
+      <b>飞行器理论数据</b>
     </div>
   </div>
 
   <div class="container">
     <div class="row col-sm-12">
 
-    <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">型号(item_no):</label>
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">电池容量:</label>
+        <div class="col-sm-8">
+          <?php echo $batteryCapacity*1000.'(毫安)'; ?>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">最大电流:</label>
+        <div class="col-sm-8">
+          <?php echo $allAmps.'(安)'; ?>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">总功率:</label>
+        <div class="col-sm-8">
+          <?php echo $allPower.'(W)'; ?>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">悬停时间:</label>
+        <div class="col-sm-8">
+          <?php echo $flyTime."(分钟)"; ?>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">安全起飞重量:</label>
+        <div class="col-sm-8">
+          <?php echo $safeForce."(克)"; ?>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">无人机飞行效率:</label>
+        <div class="col-sm-8">
+          <?php echo $efficiency*100.' %'; ?>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-xs-12 page-header">
+    <div style="text-align: center;font-size: 1.5em;">
+      <b>电机推荐</b>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row col-sm-12">
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">电机品牌:</label>
+        <div class="col-sm-8">
+          <?php echo $dianJiStyle; ?>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">电机型号:</label>
         <div class="col-sm-8">
           <?php echo $item_no; ?>
         </div>
@@ -56,51 +116,16 @@
       </div>
 
       <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">电流(amps):</label>
-        <div class="col-sm-8">
-          <?php echo $amps; ?>
-        </div>
-      </div>
-
-      <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">电压(volts):</label>
-        <div class="col-sm-8">
-          <?php echo $volts." s"; ?>
-        </div>
-      </div>
-
-      <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">功率(power):</label>
-        <div class="col-sm-8">
-          <?php echo $power; ?>
-        </div>
-      </div>
-
-      <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">拉力(force):</label>
-        <div class="col-sm-8">
-          <?php echo $force; ?>
-        </div>
-      </div>
-
-      <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">最佳电流(bestAmps):</label>
-        <div class="col-sm-8">
-          <?php echo $bestAmps; ?>
-        </div>
-      </div>
-
-      <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">最佳拉力(bestForce):</label>
-        <div class="col-sm-8">
-          <?php echo $bestForce; ?>
-        </div>
-      </div>
-
-      <div class="form-group col-sm-12">
         <label class="col-sm-4 control-label">工作温度(oper_temperature):</label>
         <div class="col-sm-8">
           <?php echo $oper_temperature; ?>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label class="col-sm-4 control-label">单个电机最大电流 :</label>
+        <div class="col-sm-8">
+          <?php echo $amps.'(安)'; ?>
         </div>
       </div>
 
@@ -112,15 +137,15 @@
       </div>
 
       <div class="form-group col-sm-12">
-        <!-- <h4>悬停时间(minutes)</h4> -->
-        <label class="col-sm-4 control-label">悬停时间(minutes)</label>
+        <label class="col-sm-4 control-label">建议电调:</label>
         <div class="col-sm-8">
-          <?php echo $flyTime; ?>
+          <?php echo $adviseAmps; ?>
         </div>
       </div>
-  </div>
 
-</div>
+    </div>
+
+  </div>
 </body>
 
 <script type="text/javascript">

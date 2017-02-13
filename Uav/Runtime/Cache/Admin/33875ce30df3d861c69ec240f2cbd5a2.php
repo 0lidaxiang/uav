@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
   <title>管理员添加电机</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" ">
-  <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
+  <link href="/Public/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
 
 </head>
 <body>
   <!-- 导入导航栏-->
-  <?php //include("__PUBLIC__/view/nav.html"); ?>
+  <?php ?>
 
   <!-- 网页主体内容 -->
   <div class="col-lg-12">
@@ -173,8 +173,8 @@
 </div>
 </body>
 
-<script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
-<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js "></script>
+<script src="/Public/js/jquery-2.2.4.min.js "></script>
+<script src="/Public/bootstrap/js/bootstrap.min.js "></script>
 
 <script type="text/javascript ">
   function computePower() {
