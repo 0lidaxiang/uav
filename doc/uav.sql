@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50713
 File Encoding         : 65001
 
-Date: 2017-02-08 21:53:26
+Date: 2017-02-13 18:48:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,6 +38,7 @@ INSERT INTO `admin` VALUES ('2016001', 'admin', '8e9be7c0cb8d77e116792c4a1438bbb
 DROP TABLE IF EXISTS `dianji`;
 CREATE TABLE `dianji` (
   `item_no` varchar(20) NOT NULL,
+  `style` varchar(50) DEFAULT NULL,
   `kv` varchar(100) DEFAULT NULL,
   `amps` varchar(4) DEFAULT NULL,
   `volts` varchar(50) DEFAULT NULL,
