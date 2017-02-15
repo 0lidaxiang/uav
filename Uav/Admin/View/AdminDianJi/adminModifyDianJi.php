@@ -1,4 +1,7 @@
-
+<?php
+$DianJi = new \Common\Model\DianjiModel();
+$dianJiResult = $DianJi->where('item_no='.$item_no)->limit(1)->select();
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -12,36 +15,39 @@
 <body>
   <div class="col-lg-12">
     <div style="text-align: center; ">
-      <h1>管理员添加电机型号</h1>
+      <h1>管理员修改电机型号</h1>
     </div>
 
+    <!-- 注册信息填写 -->
     <div class="col-lg-5 col-lg-offset-3 ">
-      <form class="form-horizontal" role="form">
+
+
+      <form class="form-horizontal " role="form">
         <div class="form-group ">
           <label for="style " class="col-sm-6 control-label ">品牌(style):</label>
           <div class="col-sm-6 ">
-            <input type="text" class="form-control " id="style" name="style" >
+            <input type="text" class="form-control " id="style" name="style" value="<?php echo $dianJiResult[0]['style']; ?>">
           </div>
         </div>
 
         <div class="form-group ">
           <label for="item_no " class="col-sm-6 control-label ">型号(item_no):</label>
           <div class="col-sm-6 ">
-            <input type="text" class="form-control" id="item_no" name="item_no">
+            <input type="number" class="form-control " id="item_no" name="item_no" value="<?php echo $dianJiResult[0]['item_no']; ?>">
           </div>
         </div>
 
         <div class="form-group ">
           <label for="kv " class="col-sm-6 control-label ">KV值:</label>
           <div class="col-sm-6 ">
-            <input type="number" class="form-control " id="kv" name="kv" >
+            <input type="number" class="form-control " id="kv" name="kv" value="<?php echo $dianJiResult[0]['kv']; ?>">
           </div>
         </div>
 
         <div class="form-group">
           <label for="amps" class="col-sm-6 control-label ">电流(amps):</label>
           <div class="col-sm-6 ">
-            <input type="number" class="form-control" id="amps" name="text" placeholder="单位为A,最高5位数" oninput="computePower(), computeEfficiency()">
+            <input type="number" class="form-control" id="amps" name="text" placeholder="单位为A,最高5位数" oninput="computePower(), computeEfficiency()" value="<?php echo $dianJiResult[0]['amps']; ?>">
           </div>
         </div>
 
@@ -51,20 +57,21 @@
           <div class="col-sm-6 ">
             <div class="radio">
             <label>
-              <input type="radio" name="volts" value="4"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()" checked>4s
+              <input type="radio" id="volts4" name="volts" value="4"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">4s
             </label>
           </div>
+
           <div class="radio">
             <label>
-              <input type="radio" name="volts" value="5"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">5s
+              <input type="radio" id="volts5" name="volts" value="5"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">5s
             </label>
           </div>
+
           <div class="radio">
             <label>
-              <input type="radio" name="volts" value="6"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">6s
+              <input type="radio" id="volts6" name="volts" value="6"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">6s
             </label>
           </div>
-            <!-- <input type="number" class="form-control " id="volts" name="volts"  placeholder="单位为V,最高5位数" oninput="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()"> -->
 
           </div>
         </div>
@@ -79,7 +86,7 @@
         <div class="form-group ">
           <label for="force " class="col-sm-6 control-label ">拉力(force):</label>
           <div class="col-sm-6 ">
-            <input type="number" class="form-control " id="force" name="force" placeholder="单位为G,最高5位数" oninput="computeEfficiency()">
+            <input type="number" class="form-control " id="force" name="force" placeholder="单位为G,最高5位数" oninput="computeEfficiency()" value="<?php echo $dianJiResult[0]['force']; ?>">
           </div>
         </div>
 
@@ -95,7 +102,7 @@
         <div class="form-group">
           <label for="bestAmps" class="col-sm-6 control-label ">最佳电流(bestAmps):</label>
           <div class="col-sm-6 ">
-            <input type="number" class="form-control" id="bestAmps" name="text" placeholder="单位为A,最高5位数" oninput="computeBestPower(), computeBestEfficiency()">
+            <input type="number" class="form-control" id="bestAmps" name="text" placeholder="单位为A,最高5位数" oninput="computeBestPower(), computeBestEfficiency()" value="<?php echo $dianJiResult[0]['bestamps']; ?>">
           </div>
         </div>
 
@@ -109,7 +116,7 @@
         <div class="form-group ">
           <label for="bestForce " class="col-sm-6 control-label ">最佳拉力(bestForce):</label>
           <div class="col-sm-6 ">
-            <input type="number" class="form-control " id="bestForce" name="bestForce" placeholder="单位为g,最高5位数" oninput="computeBestEfficiency()">
+            <input type="number" class="form-control " id="bestForce" name="bestForce" placeholder="单位为g,最高5位数" oninput="computeBestEfficiency()" value="<?php echo $dianJiResult[0]['bestforce']; ?>">
           </div>
         </div>
 
@@ -123,7 +130,7 @@
         <div class="form-group ">
           <label for="oper_temperature " class="col-sm-6 control-label ">工作温度(oper_temperature):</label>
           <div class="col-sm-6 ">
-            <input type="number" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃,最高3位数" oninput="checkTemperatureLength()">
+            <input type="number" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃,最高3位数" oninput="checkTemperatureLength()" value="<?php echo $dianJiResult[0]['oper_temperature']; ?>">
           </div>
         </div>
 
@@ -132,24 +139,24 @@
          <div class="col-sm-6 ">
           <div class="radio">
             <label>
-              <input type="radio" name="jiangSize" value="11*5.5" checked>11*5.5
+              <input type="radio" name="jiangSize" id="jiangSize1" value="11*5.5">11*5.5
             </label>
           </div>
 
           <div class="radio">
             <label>
-              <input type="radio" name="jiangSize" value="12*3.8">12*3.8
+              <input type="radio" name="jiangSize" id="jiangSize2" value="12*3.8">12*3.8
             </label>
           </div>
 
           <div class="radio">
             <label>
-              <input type="radio" name="jiangSize" value="14*5.5">14*5.5
+              <input type="radio" name="jiangSize" id="jiangSize3" value="14*5.5">14*5.5
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="jiangSize" value="15*5.5">15*5.5
+              <input type="radio" name="jiangSize" id="jiangSize4" value="15*5.5">15*5.5
             </label>
           </div>
         </div>
@@ -158,7 +165,7 @@
       <div class="form-group">
         <div class="col-lg-12 ">
           <a href="/index.php/Admin/AdminDianJi/adminDianJiIndex" class="btn btn-default col-lg-4 ">回主页</a>
-          <a href="javascript: addDianJiStyle()" class="btn btn-default col-lg-4 ">确认提交</a>
+          <a href="javascript: modifyDianJiStyle()" class="btn btn-default col-lg-4 ">提交修改</a>
           <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-4 ">退出登录</a>
         </div>
       </div>
@@ -170,7 +177,28 @@
 
 <script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
 <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js "></script>
+
 <script type="text/javascript ">
+$(document).ready(function() {
+   var volts = <?php echo $dianJiResult[0]['volts']?>;
+   var jiangSizeVal = <?php echo $dianJiResult[0]['jiangsize']?>;
+
+   $("#volts"+volts).attr("checked","checked");
+
+   if (jiangSizeVal == (11*5.50)) {
+      $("#jiangSize1").attr("checked","checked");
+   }
+   else if (jiangSizeVal == (12*3.8)) {
+      $("#jiangSize2").attr("checked","checked");
+   }
+   else if (jiangSizeVal == (14*5.5)) {
+      $("#jiangSize3").attr("checked","checked");
+   }
+   else if (jiangSizeVal == (15*5.5)) {
+      $("#jiangSize4").attr("checked","checked");
+   }
+
+});
   function computePower() {
     //compute power
     // 负责只计算三位数
@@ -236,7 +264,7 @@ function computeBestEfficiency() {
     }
   }
 
-  function addDianJiStyle(){
+  function modifyDianJiStyle(){
     var style = $.trim($("#style").val());
     var item_no = $.trim($("#item_no").val());
     var kv = $.trim($("#kv").val());
@@ -296,20 +324,18 @@ function computeBestEfficiency() {
     }
 
     $.ajax({
-      url: '/index.php/Admin/AdminDianJi/addDianJiStyle',
+      url: '/index.php/Admin/AdminDianJi/modifyDianJi',
       type: 'POST',
       data: parms,
       success:function(responseData){
-        // console.log(responseData);
-        if(responseData == 0){
-          window.location.href="/index.php/Admin/AdminDianJi/adminAddDianJi";
-          alert("添加成功! ");
-        }else if(responseData==3){
-          // window.location.href="/index.php/Home/Home/index ";
-          alert("操作异常!请联系管理员！ ");
+        if(responseData == 10){
+          window.location.href="/index.php/Admin/AdminDianJi/adminDianJiIndex";
+          alert("修改成功! ");
+        }else if(responseData==30){
+          alert("服务器异常!请联系管理员！ ");
         }
-        else if(responseData==2){
-          alert("已经存在该型号!请确认数据库中的信息一致 ");
+        else if(responseData==20){
+          alert("没有更新任何数据!");
         }
         else{
           alert("错误：" +responseData);

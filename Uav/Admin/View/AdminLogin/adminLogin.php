@@ -3,10 +3,6 @@
 <head>
     <title>管理后台登录</title>
     <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
-    <script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
-    <script src="__PUBLIC__/js/jquery.md5.js"></script>
-    <!-- Bootstrap Core CSS -->
-    <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
 
@@ -36,6 +32,8 @@
         </div>
     </div>
 
+<script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
+<script src="__PUBLIC__/js/jquery.md5.js"></script>
 <script type="text/javascript">
     // 登录
     function login() {
@@ -64,7 +62,7 @@
                 success:function(responseData){
                     // console.log("responseData:" + responseData);
                     if(responseData==0){
-                        window.location.href="/index.php/Admin/AdminDianJi/adminAddDianJi";
+                        window.location.href="/index.php/Admin/AdminDianJi/adminDianJiIndex";
                     }
                     else if(responseData==5){
                         alert("该账号正在审核中!\r\n请稍后再尝试登录或联系我们！ ");

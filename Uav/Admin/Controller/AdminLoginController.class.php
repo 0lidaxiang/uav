@@ -5,7 +5,7 @@ class AdminLoginController extends Controller {
 	public function adminLogin(){
 		// $this->display();
 		if (isset($_SESSION['adminUserId'])) {
-			$this->success('已经成功登录管理后台！正在跳转到主页',"/index.php/Admin/AdminDianJi/adminAddDianJi",2);
+			$this->success('已经成功登录管理后台！正在跳转到主页',"/index.php/Admin/AdminDianJi/adminDianJiIndex",2);
 		}
 		else{
 			$this->display("adminLogin");
