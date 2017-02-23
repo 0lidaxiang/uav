@@ -1,13 +1,10 @@
-<?php
-$DianJi = new \Common\Model\DianjiModel();
-$dianJiResult = $DianJi->where(1)->order('create_time desc')->select();
-?>
+<?php if (!defined('THINK_PATH')) exit(); $DianJi = new \Common\Model\DianjiModel(); $dianJiResult = $DianJi->where(1)->order('create_time desc')->select(); ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>电机管理</title>
-  <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
+  <link href="/Public/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
 </head>
 
 <body>
@@ -52,9 +49,7 @@ $dianJiResult = $DianJi->where(1)->order('create_time desc')->select();
         <tbody>
 
           <?php
-                            // 列出项目参与学生
-          for ($i=0; $i < count($dianJiResult); $i++) {
-            ?>
+ for ($i=0; $i < count($dianJiResult); $i++) { ?>
             <tr>
               <td><?php echo $i+1; ?></td>
               <td><?php echo $dianJiResult[$i]['item_no']; ?></td>
@@ -67,7 +62,7 @@ $dianJiResult = $DianJi->where(1)->order('create_time desc')->select();
               <td><?php echo $dianJiResult[$i]['bestforce']; ?> </td>
               <td><?php echo $dianJiResult[$i]['oper_temperature']; ?></td>
               <td><?php echo $dianJiResult[$i]['jiangsize']; ?></td>
-              <td><?php echo $dianJiResult[$i]['create_time'];  ?>
+              <td><?php echo $dianJiResult[$i]['create_time']; ?>
               </td>
               <td>
                 <a href="javascript:deleteDianJi('<?php echo $dianJiResult[$i]['id'];?>')">删除</a>
@@ -75,8 +70,7 @@ $dianJiResult = $DianJi->where(1)->order('create_time desc')->select();
               </td>
             </tr>
             <?php
-          }
-          ?>
+ } ?>
         </tbody>
       </table>
     </div><!-- /div.class="table-responsive" -->
@@ -86,7 +80,7 @@ $dianJiResult = $DianJi->where(1)->order('create_time desc')->select();
 </div><!-- /.row -->
 </body>
 
-<script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
+<script src="/Public/js/jquery-2.2.4.min.js "></script>
 <script type="text/javascript">
     function addDianJi() {
       window.location.href="/index.php/Admin/AdminDianJi/adminAddDianJi";

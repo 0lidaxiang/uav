@@ -8,6 +8,6 @@ class DianjiModel extends Model {
 		// protected $trueTableName = 'activity_par';
 
     protected $fields = array(
-    	 'item_no', 'style','kv', 'amps', 'volts','force', 'bestAmps', 'bestForce', 'oper_temperature','jiangSize','create_time'
+    	 'id','item_no', 'style','kv', 'amps', 'volts','force', 'bestAmps', 'bestForce', 'oper_temperature','jiangSize','create_time'
     );
 }

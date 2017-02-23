@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50713
 File Encoding         : 65001
 
-Date: 2017-02-13 18:48:14
+Date: 2017-02-23 15:58:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,20 +37,17 @@ INSERT INTO `admin` VALUES ('2016001', 'admin', '8e9be7c0cb8d77e116792c4a1438bbb
 -- ----------------------------
 DROP TABLE IF EXISTS `dianji`;
 CREATE TABLE `dianji` (
-  `item_no` varchar(20) NOT NULL,
+  `id` varchar(20) NOT NULL,
+  `item_no` varchar(20) DEFAULT NULL,
   `style` varchar(50) DEFAULT NULL,
   `kv` varchar(100) DEFAULT NULL,
-  `amps` varchar(4) DEFAULT NULL,
-  `volts` varchar(50) DEFAULT NULL,
-  `force` varchar(3) DEFAULT NULL,
+  `amps` varchar(10) DEFAULT NULL,
+  `volts` varchar(10) DEFAULT NULL,
+  `force` varchar(10) DEFAULT NULL,
   `bestAmps` varchar(10) DEFAULT NULL,
   `bestForce` varchar(10) DEFAULT NULL,
-  `oper_temperature` varchar(4) DEFAULT NULL,
+  `oper_temperature` varchar(10) DEFAULT NULL,
   `jiangSize` varchar(10) DEFAULT NULL,
   `create_time` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`item_no`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dianji
--- ----------------------------

@@ -18,6 +18,13 @@
     <div class="col-lg-5 col-lg-offset-3 ">
       <form class="form-horizontal" role="form">
         <div class="form-group ">
+          <label for="dianJiId " class="col-sm-6 control-label ">电机ID:</label>
+          <div class="col-sm-6 ">
+            <input type="text" class="form-control " id="dianJiId" name="dianJiId" disabled="disabled">
+          </div>
+        </div>
+
+        <div class="form-group ">
           <label for="style " class="col-sm-6 control-label ">品牌(style):</label>
           <div class="col-sm-6 ">
             <input type="text" class="form-control " id="style" name="style" >
@@ -50,20 +57,20 @@
 
           <div class="col-sm-6 ">
             <div class="radio">
-            <label>
-              <input type="radio" name="volts" value="4"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()" checked>4s
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="volts" value="5"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">5s
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="volts" value="6"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">6s
-            </label>
-          </div>
+              <label>
+                <input type="radio" name="volts" value="4"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()" checked>4s
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="volts" value="5"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">5s
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="volts" value="6"  onclick="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()">6s
+              </label>
+            </div>
             <!-- <input type="number" class="form-control " id="volts" name="volts"  placeholder="单位为V,最高5位数" oninput="computePower(), computeBestPower(), computeEfficiency(), computeBestEfficiency()"> -->
 
           </div>
@@ -87,6 +94,13 @@
           <label for="efficiency " class="col-sm-6 control-label ">效率(efficiency):</label>
           <div class="col-sm-6 ">
             <input type="number" class="form-control " id="efficiency" name="efficiency" placeholder="0 G/W" readonly="readonly">
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="oper_temperature " class="col-sm-6 control-label ">工作温度(oper_temperature):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃,最高3位数" oninput="checkTemperatureLength()">
           </div>
         </div>
 
@@ -121,55 +135,72 @@
         </div>
 
         <div class="form-group ">
-          <label for="oper_temperature " class="col-sm-6 control-label ">工作温度(oper_temperature):</label>
+          <label for="oper_temperature " class="col-sm-6 control-label ">推荐浆(size):</label>
           <div class="col-sm-6 ">
-            <input type="number" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃,最高3位数" oninput="checkTemperatureLength()">
+            <div class="radio">
+              <label>
+                <input type="radio" name="jiangSize" value="11*5.5" checked>11*5.5
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="jiangSize" value="12*3.8">12*3.8
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="jiangSize" value="14*5.5">14*5.5
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="jiangSize" value="15*5.5">15*5.5
+              </label>
+            </div>
           </div>
         </div>
 
-        <div class="form-group ">
-        <label for="oper_temperature " class="col-sm-6 control-label ">推荐浆(size):</label>
-         <div class="col-sm-6 ">
-          <div class="radio">
-            <label>
-              <input type="radio" name="jiangSize" value="11*5.5" checked>11*5.5
-            </label>
-          </div>
-
-          <div class="radio">
-            <label>
-              <input type="radio" name="jiangSize" value="12*3.8">12*3.8
-            </label>
-          </div>
-
-          <div class="radio">
-            <label>
-              <input type="radio" name="jiangSize" value="14*5.5">14*5.5
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="jiangSize" value="15*5.5">15*5.5
-            </label>
+        <div class="form-group">
+          <div class="col-lg-12 ">
+            <a href="/index.php/Admin/AdminDianJi/adminDianJiIndex" class="btn btn-default col-lg-4 ">回主页</a>
+            <a href="javascript: addDianJiStyle()" class="btn btn-default col-lg-4 ">确认提交</a>
+            <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-4 ">退出登录</a>
           </div>
         </div>
-      </div>
+      </form>
+    </div>
 
-      <div class="form-group">
-        <div class="col-lg-12 ">
-          <a href="/index.php/Admin/AdminDianJi/adminDianJiIndex" class="btn btn-default col-lg-4 ">回主页</a>
-          <a href="javascript: addDianJiStyle()" class="btn btn-default col-lg-4 ">确认提交</a>
-          <a href="/index.php/Admin/AdminLogin/logout" class="btn btn-default col-lg-4 ">退出登录</a>
-        </div>
-      </div>
-    </form>
   </div>
-
-</div>
 </body>
 
 <script src="__PUBLIC__/js/jquery-2.2.4.min.js "></script>
 <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js "></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $.ajax({
+      url: '/index.php/Admin/AdminDianJi/createDianJiId',
+      type: 'POST',
+      data: {adminName: <?php echo "'".$adminName."'"; ?>},
+    })
+    .done(function(responseData) {
+      if (responseData != 1) {
+                    // console.log(responseData);
+                    $("#dianJiId").val(responseData);
+                  }else{
+                   // console.log(responseData);
+                    alert("系统生成的id已被使用，请刷新后重新生成！");
+                    location.href = "./adminAddDianJi";
+                  }
+                })
+    .fail(function() {
+      alert("创建电机id错误！请联系管理员！");
+    });
+
+  });
+</script>
+
 <script type="text/javascript ">
   function computePower() {
     //compute power
@@ -237,6 +268,7 @@ function computeBestEfficiency() {
   }
 
   function addDianJiStyle(){
+    var dianJiId = $.trim($("#dianJiId").val());
     var style = $.trim($("#style").val());
     var item_no = $.trim($("#item_no").val());
     var kv = $.trim($("#kv").val());
@@ -283,6 +315,7 @@ function computeBestEfficiency() {
     }
 
     var parms = {
+      'dianJiId' : dianJiId,
       'style' : style,
       'item_no' : item_no,
       'kv' : kv,

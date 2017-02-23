@@ -13,6 +13,7 @@ class AdminDianJiController extends Controller {
 	}
 
 	public function addDianJiStyle(){
+		$data['id'] = $_POST['dianJiId'];
 		$data['item_no'] = $_POST['item_no'];
 		$data['style'] = $_POST['style'];
 		$data['kv'] = $_POST['kv'];
@@ -28,7 +29,7 @@ class AdminDianJiController extends Controller {
 
 		try {
 			$Dianji = new \Common\Model\DianjiModel();
-			$result = $Dianji->where("item_no="."'".$data['item_no']."'")->limit(1)->select();
+			$result = $Dianji->where("id="."'".$data['id']."'")->limit(1)->select();
 
 			if (count($result) == 0) {
 				$addResult = $Dianji->add($data);
@@ -46,11 +47,12 @@ class AdminDianJiController extends Controller {
 	}
 
 	public function adminModifyDianJi(){
-		$item_no = $_GET['no'];
-		$this->assign('item_no' , $item_no);
+		$dianJiId = $_GET['dianJiId'];
+		$this->assign('dianJiId' , $dianJiId);
 		$this->display('adminModifyDianJi');
 	}
 	public function modifyDianJi(){
+		$data['id'] = $_POST['dianJiId'];
 		$data['item_no'] = $_POST['item_no'];
 		$data['style'] = $_POST['style'];
 		$data['kv'] = $_POST['kv'];
@@ -66,10 +68,10 @@ class AdminDianJiController extends Controller {
 
 		try {
 			$Dianji = new \Common\Model\DianjiModel();
-			$result = $Dianji->where("item_no="."'".$data['item_no']."'")->limit(1)->save($data);
+			$result = $Dianji->where("id="."'".$data['id']."'")->limit(1)->save($data);
 
 			if (count($result) == 1) {
-					echo 10;
+				echo 10;
 			}
 			else{
 				echo 20;
@@ -80,20 +82,32 @@ class AdminDianJiController extends Controller {
 	}
 
 	public function delteDianJi(){
-		$data['item_no'] = $_POST['item_no'];
+		$data['dianJiId'] = $_POST['dianJiId'];
 
 		try {
 			$Dianji = new \Common\Model\DianjiModel();
-			$result = $Dianji->where("item_no="."'".$data['item_no']."'")->limit('1')->delete();
+			$result = $Dianji->where("id="."'".$data['dianJiId']."'")->limit('1')->delete();
 
 			if ($result == 1) {
-					echo 10;
+				echo 10;
 			}
 			else{
 				echo 20;
 			}
 		} catch (Exception $e) {
 			echo 30;
+		}
+	}
+
+	public function createDianJiId(){
+		$uniqid = uniqid(mt_rand(1,100000000000), true);
+		$id = substr($uniqid,0,10);
+		$DianJi = new \Common\Model\DianjiModel();
+		$result = $DianJi->where("id = ".$id)->select();
+		if (count($result) > 0) {
+			echo 1;
+		}else{
+			echo $id;
 		}
 	}
 
