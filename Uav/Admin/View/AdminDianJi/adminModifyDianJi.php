@@ -6,7 +6,7 @@ $dianJiResult = $DianJi->where('id='.$dianJiId)->limit(1)->select();
 <html lang="zh-CN">
 
 <head>
-  <title>管理员添加电机</title>
+  <title>管理员修改电机</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" ">
   <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css " rel="stylesheet ">
@@ -15,7 +15,7 @@ $dianJiResult = $DianJi->where('id='.$dianJiId)->limit(1)->select();
 <body>
   <div class="col-lg-12">
     <div style="text-align: center; ">
-      <h1>管理员修改电机型号</h1>
+      <h1>管理员修改电机</h1>
     </div>
 
     <!-- 注册信息填写 -->
@@ -102,6 +102,14 @@ $dianJiResult = $DianJi->where('id='.$dianJiId)->limit(1)->select();
           <div class="col-sm-6 ">
             <input type="number" class="form-control " id="efficiency" name="efficiency" placeholder="0 G/W" readonly="readonly">
           </div>
+
+          <div class="form-group ">
+          <label for="oper_temperature " class="col-sm-6 control-label ">工作温度(oper_temperature):</label>
+          <div class="col-sm-6 ">
+            <input type="number" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃,最高3位数" oninput="checkTemperatureLength()" value="<?php echo $dianJiResult[0]['oper_temperature']; ?>">
+          </div>
+        </div>
+
         </div>
 
         <hr>
@@ -135,13 +143,6 @@ $dianJiResult = $DianJi->where('id='.$dianJiId)->limit(1)->select();
         </div>
 
         <div class="form-group ">
-          <label for="oper_temperature " class="col-sm-6 control-label ">工作温度(oper_temperature):</label>
-          <div class="col-sm-6 ">
-            <input type="number" class="form-control " id="oper_temperature" name="oper_temperature" placeholder="单位为℃,最高3位数" oninput="checkTemperatureLength()" value="<?php echo $dianJiResult[0]['oper_temperature']; ?>">
-          </div>
-        </div>
-
-        <div class="form-group ">
         <label for="oper_temperature " class="col-sm-6 control-label ">推荐浆(size):</label>
          <div class="col-sm-6 ">
           <div class="radio">
@@ -158,12 +159,18 @@ $dianJiResult = $DianJi->where('id='.$dianJiId)->limit(1)->select();
 
           <div class="radio">
             <label>
-              <input type="radio" name="jiangSize" id="jiangSize3" value="14*5.5">14*5.5
+              <input type="radio" name="jiangSize" id="jiangSize3" value="13*5.5">13*5.5
+            </label>
+          </div>
+
+          <div class="radio">
+            <label>
+              <input type="radio" name="jiangSize" id="jiangSize4" value="14*5.5">14*5.5
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="jiangSize" id="jiangSize4" value="15*5.5">15*5.5
+              <input type="radio" name="jiangSize" id="jiangSize5" value="15*5.5">15*5.5
             </label>
           </div>
         </div>
@@ -198,11 +205,14 @@ $(document).ready(function() {
    else if (jiangSizeVal == (12*3.8)) {
       $("#jiangSize2").attr("checked","checked");
    }
-   else if (jiangSizeVal == (14*5.5)) {
+   else if (jiangSizeVal == (13*5.5)) {
       $("#jiangSize3").attr("checked","checked");
    }
-   else if (jiangSizeVal == (15*5.5)) {
+   else if (jiangSizeVal == (14*5.5)) {
       $("#jiangSize4").attr("checked","checked");
+   }
+   else if (jiangSizeVal == (15*5.5)) {
+      $("#jiangSize5").attr("checked","checked");
    }
 
 });

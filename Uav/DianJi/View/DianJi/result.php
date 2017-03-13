@@ -34,21 +34,21 @@
       <div class="form-group col-sm-12">
         <label class="col-sm-4 control-label">电池容量:</label>
         <div class="col-sm-8">
-          <?php echo $batteryCapacity * 1000;echo '(毫安)'; ?>
+          <?php echo $batteryCapacity;echo '(毫安)'; ?>
         </div>
       </div>
 
       <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">最大电流:</label>
+        <label class="col-sm-4 control-label">电池电压:</label>
         <div class="col-sm-8">
-          <?php echo $allAmps.'(安)'; ?>
+          <?php echo $volts.'(S)'; ?>
         </div>
       </div>
 
       <div class="form-group col-sm-12">
-        <label class="col-sm-4 control-label">总功率:</label>
+        <label class="col-sm-4 control-label">最佳功率:</label>
         <div class="col-sm-8">
-          <?php echo $allPower.'(W)'; ?>
+          <?php echo $bestPower.'(W)'; ?>
         </div>
       </div>
 
@@ -69,7 +69,7 @@
       <div class="form-group col-sm-12">
         <label class="col-sm-4 control-label">无人机飞行效率:</label>
         <div class="col-sm-8">
-          <?php echo $efficiency * 100; echo ' %'; ?>
+          <?php echo $efficiency; echo ' %'; ?>
         </div>
       </div>
 

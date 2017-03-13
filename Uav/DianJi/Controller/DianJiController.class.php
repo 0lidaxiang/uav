@@ -9,21 +9,20 @@ class DianJiController extends Controller {
 
 	public function computeDianJi($result, $numberOfDianJi, $batteryCapacity)
 	{
-		$voltage = $result['volts'] * 3.6;
-		$power = $batteryCapacity * $voltage;
-		$flyTime = $batteryCapacity / ($voltage * $power * $numberOfDianJi);
-		$allPower = $power * $numberOfDianJi;
-		$efficiency = number_format($result['force'] / $power);
+		$bestPower = $result['bestamps'] * $result['volts'] * 3.2;
+		$flyTime = number_format($batteryCapacity / ($bestPower * $numberOfDianJi), 2);
+		$safeForce = $result['force'] * $numberOfDianJi * 0.5;
+		$efficiency = number_format($result['bestforce'] / $bestPower, 2);
 		$adviseAmps = ((int)($result['amps'] / 10) + 1) * 10 ;
 
 		$this->assign('batteryCapacity' , $batteryCapacity);
-		$this->assign('allAmps' , $result['amps'] * $numberOfDianJi);
-		$this->assign('allPower' , $allPower);
-		$this->assign('flyTime' , number_format($flyTime ,2));
-		$this->assign('safeForce' , $result['force'] * $numberOfDianJi * 0.5);
+		$this->assign('volts' , $result['volts']);
+		$this->assign('bestPower' , $bestPower);
+		$this->assign('flyTime' , $flyTime);
+		$this->assign('safeForce' , $safeForce);
 		$this->assign('efficiency' , $efficiency);
 
-		$this->assign('dianJiStyle' , $result['dianjistyle']);
+		$this->assign('dianJiStyle' , $result['style']);
 		$this->assign('item_no' , $result['item_no']);
 		$this->assign('amps' , $result['amps']);
 		$this->assign('kv' , $result['kv']);
@@ -45,10 +44,10 @@ class DianJiController extends Controller {
 		try {
 			$Dianji = new \Common\Model\DianjiModel();
 			//挑选最接近最佳拉力的结果
-			$result = $Dianji->query("SELECT * FROM dianji WHERE ABS(bestForce-".$userBestForce.")=(SELECT MIN(ABS(bestForce-".$userBestForce.")) FROM dianji)");
+			$result = $Dianji->query("SELECT* FROM dianji WHERE ABS(bestForce-".$userBestForce.") < 200 order by ABS(bestForce-".$userBestForce.") ASC LIMIT 1");
 
+			// echo $Dianji->getLastSql();
 			if (count($result) == 1) {
-				// echo $Dianji->getLastSql();
 				$this->computeDianJi($result[0], $numberOfDianJi, $batteryCapacity);
 			}
 			else{

@@ -85,34 +85,34 @@
           <div class="col-sm-8">
             <div class="radio">
               <label>
-                <input type="radio" name="batteryCapacity" value="5" checked>5000毫安
+                <input type="radio" name="batteryCapacity" value="5000" checked>5000毫安
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="batteryCapacity" value="6">6000毫安
+                <input type="radio" name="batteryCapacity" value="6000">6000毫安
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="batteryCapacity" value="8">8000毫安
+                <input type="radio" name="batteryCapacity" value="8000">8000毫安
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="batteryCapacity" value="10">10000毫安
+                <input type="radio" name="batteryCapacity" value="10000">10000毫安
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="batteryCapacity" value="22">22000毫安
+                <input type="radio" name="batteryCapacity" value="22000">22000毫安
               </label>
             </div>
           </div>
         </div>
 
         <div class="form-group col-sm-12">
-          <label for="catchWeight" class="col-sm-4 control-label">电机总重量</label>
+          <label for="catchWeight" class="col-sm-4 control-label">起飞总重量</label>
           <div class="col-sm-4">
             <input type="number" class="form-control " id="catchWeight" name="catchWeight" placeholder="单位为g,最高5位数" oninput="limit5()">
           </div>

@@ -12,7 +12,7 @@
 <body>
   <div class="col-lg-12">
     <div style="text-align: center; ">
-      <h1>管理员添加电机型号</h1>
+      <h1>管理员添加电机</h1>
     </div>
 
     <div class="col-lg-5 col-lg-offset-3 ">
@@ -151,9 +151,16 @@
 
             <div class="radio">
               <label>
+                <input type="radio" name="jiangSize" value="13*5.5">13*5.5
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
                 <input type="radio" name="jiangSize" value="14*5.5">14*5.5
               </label>
             </div>
+
             <div class="radio">
               <label>
                 <input type="radio" name="jiangSize" value="15*5.5">15*5.5
